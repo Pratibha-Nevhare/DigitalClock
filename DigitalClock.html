@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(130, 207, 181);
+            font:200px;
+            color: gray;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+    .hour,.minute,.second{
+        height: 35px;
+        width: 38px;
+        margin: auto;
+        position: relative;
+        left: 100px;
+        background-color: brown;
+        border: 1px;
+        color: aliceblue;
+    }
+
+    </style>
+</head>
+<body>
+ <h2> welcome to here to see clock</h2>  
+ <div>
+    <button class="hour"></button>
+    <button class="minute"></button>
+    <button class="second"></button>
+ </div> 
+ <script>
+    let hourHand=document.querySelector('.hour');
+    let minuteHand=document.querySelector('.minute');
+    let secondHand=document.querySelector('.second');
+
+    let ticking=function(){
+        let currentDate=new Date();
+        let Hour=currentDate.getHours();
+        let getMinute=currentDate.getMinutes();
+        let getSecond=currentDate.getSeconds();
+
+        hourHand.textContent=Hour;
+        minuteHand.textContent=getMinute;
+        secondHand.textContent=getSecond;
+
+    }
+    setInterval(ticking,1000);
+
+ </script>
+</body>
+</html>
